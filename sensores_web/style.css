@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* LOGIN */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 35px;
+  border-radius: 18px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.login-box p {
+  margin-bottom: 18px;
+  color: #cbd5e1;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #16a34a;
+}
+
+.error-msg {
+  color: #f87171;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* DASHBOARD */
+.hidden {
+  display: none;
+}
+
+.dashboard {
+  padding: 25px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topbar h1 {
+  font-size: 30px;
+}
+
+.logout-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.sensor-block {
+  margin-bottom: 30px;
+  padding: 18px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+.sensor-block label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sensor-block input[type="range"] {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.sensor-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.led {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: gray;
+  box-shadow: 0 0 12px rgba(255,255,255,0.3);
+}
+
+.summary-box {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.summary-box p {
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

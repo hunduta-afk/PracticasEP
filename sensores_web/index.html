@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Monitoreo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Pantalla de login -->
+  <div class="login-container" id="loginContainer">
+    <div class="login-box">
+      <h1>Acceso al Sistema</h1>
+      <p>Monitoreo de sensores con indicadores virtuales</p>
+
+      <input type="text" id="username" placeholder="Usuario" />
+      <input type="password" id="password" placeholder="Contraseña" />
+      <button onclick="login()">Iniciar sesión</button>
+
+      <p id="loginMessage" class="error-msg"></p>
+    </div>
+  </div>
+
+  <!-- Panel principal -->
+  <div class="dashboard hidden" id="dashboard">
+    <header class="topbar">
+      <h1>Sistema de Monitoreo Industrial</h1>
+      <button class="logout-btn" onclick="logout()">Cerrar sesión</button>
+    </header>
+
+    <main class="main-grid">
+      <!-- Panel de sensores -->
+      <section class="card">
+        <h2>Área de Monitoreo</h2>
+
+        <div class="sensor-block">
+          <label for="humidity">Humedad (%)</label>
+          <input type="range" id="humidity" min="0" max="20" value="8" oninput="updateSensors()" />
+          <div class="sensor-info">
+            <span>Valor actual:</span>
+            <strong id="humidityValue">8%</strong>
+          </div>
+          <div class="status-row">
+            <div class="led" id="humidityLed"></div>
+            <span id="humidityStatus">Estado: Advertencia</span>
+          </div>
+        </div>
+
+        <div class="sensor-block">
+          <label for="temperature">Temperatura (°C)</label>
+          <input type="range" id="temperature" min="0" max="50" value="25" oninput="updateSensors()" />
+          <div class="sensor-info">
+            <span>Valor actual:</span>
+            <strong id="temperatureValue">25°C</strong>
+          </div>
+          <div class="status-row">
+            <div class="led" id="temperatureLed"></div>
+            <span id="temperatureStatus">Estado: Normal</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel resumen -->
+      <section class="card">
+        <h2>Resumen del Sistema</h2>
+
+        <div class="summary-box">
+          <p><strong>Sensor 1:</strong> Humedad</p>
+          <p id="summaryHumidity">8% - Advertencia</p>
+        </div>
+
+        <div class="summary-box">
+          <p><strong>Sensor 2:</strong> Temperatura</p>
+          <p id="summaryTemperature">25°C - Normal</p>
+        </div>
+
+        <div class="summary-box">
+          <p><strong>Estado general:</strong></p>
+          <p id="generalStatus">Sistema en monitoreo</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
